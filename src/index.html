@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <span>登录</span>
+        <span>注册</span>
+        <hr />
+        <div>
+            登录/注册
+        </div>
+
+        <login-form></login-form>
+        <register-form></register-form>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="./user/login.js"></script>
+    <script src="./user/register.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            components: {
+                loginForm,
+                registerForm
+            }
+        })
+    </script>
+</body>
+
+</html>
