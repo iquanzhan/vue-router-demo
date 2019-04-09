@@ -10,26 +10,43 @@
 
 <body>
     <div id="app">
-        <span>登录</span>
-        <span>注册</span>
+        <span>
+            <router-link to="/login">登录</router-link>
+        </span>
+        <span>
+            <router-link to="/register">注册</router-link>
+        </span>
         <hr />
         <div>
             登录/注册
         </div>
 
-        <login-form></login-form>
-        <register-form></register-form>
+        <router-view></router-view>
     </div>
     <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
     <script src="./user/login.js"></script>
     <script src="./user/register.js"></script>
     <script>
+        const router = new VueRouter({
+            routes: [{
+                    path: '/login',
+                    component: loginForm
+                },
+                {
+                    path: '/register',
+                    component: registerForm
+                }
+            ]
+        });
+
         var app = new Vue({
             el: '#app',
             components: {
                 loginForm,
                 registerForm
-            }
+            },
+            router
         })
     </script>
 </body>
